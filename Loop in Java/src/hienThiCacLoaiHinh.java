@@ -18,7 +18,7 @@ public class hienThiCacLoaiHinh {
                         for(int j = 1; j <= 10; j++) {
                             System.out.print("*  ");
                         }
-                        System.out.println("");
+                        System.out.println();
                     }
                     break;
                 case 2 :
@@ -26,7 +26,7 @@ public class hienThiCacLoaiHinh {
                         for (int j = 1; j <= i; j++) {
                             System.out.print("*  ");
                         }
-                        System.out.println("");
+                        System.out.println();
                     }
                     break;
                 case 3 :
@@ -34,7 +34,7 @@ public class hienThiCacLoaiHinh {
                         for (int j = 1; j <= i ; j++) {
                             System.out.print("*  ");
                         }
-                        System.out.println("");
+                        System.out.println();
                     }
                     break;
                 case 4 :
