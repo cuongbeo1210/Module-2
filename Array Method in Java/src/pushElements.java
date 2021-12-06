@@ -1,37 +1,29 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class pushElements {
     public static void main(String[] args) {
-        int number;
-        boolean check = false;
-        int[] array = {1, 2, 3, 4, 5, 6, 7};
-        int n = array.length;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the element to be checked : ");
-        number = scanner.nextInt();
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == number) {
-                check = true;
-                System.out.println("Index of Element is : " + i);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Nhap phan tu can chen : ");
+        int num = input.nextInt(), index;
+
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        do {
+            System.out.print("Nhap thu tu can chen : ");
+            index = input.nextInt();
+            int[] array = new int[arr.length + 1];
+            for (int i = 0; i < index - 1; i++) {
+                array[i] = arr[i];
             }
-        }
-        if (!check) {
-            System.out.println("Not Found");
-        }
-        System.out.print("Enter index to push : ");
-        int index = scanner.nextInt();
-        System.out.print("Enter Elements : ");
-        int Element = scanner.nextInt();
-        for(int i = n; i > index; i--) {
-            array[i] = array[i - 1];
-        }
-        array[index] = Element;
+            for (int i = arr.length; i > index - 1; i--) {
+                array[i] = arr[i - 1];
+            }
+            array[array.length - 1] = arr[arr.length - 1];
+            array[index - 1] = num;
 
-        System.out.println("Mảng sau khi thêm phần tử " + Element + " là : ");
-        for (int i = 0; i < array.length ; i++) {
-            System.out.print(array[i] + "\t");
-        }
+            System.out.print("new Array=" + Arrays.toString(array));
+        } while (index < 0 || index >= arr.length);
     }
-
 }
 

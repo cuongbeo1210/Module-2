@@ -1,28 +1,31 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class deleteElemInArray {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Nhap phan tu can chen : ");
-        int num = input.nextInt(), index;
-
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-        do {
-            System.out.print("Nhap thu tu can chen : ");
-            index = input.nextInt();
-            int[] array = new int[arr.length + 1];
-            for (int i = 0; i < index - 1; i++) {
-                array[i] = arr[i];
+        int number, count = 0;
+        boolean check = false;
+        int[] array = {1, 2, 3, 3, 3, 4, 5, 6};
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the element to be checked : ");
+        number = scanner.nextInt();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number) {
+                check = true;
+                count += 1;
+                System.out.println("Index of Element is : " + i);
             }
-            for (int i = arr.length; i > index - 1; i--) {
-                array[i] = arr[i - 1];
+        }   for (int j = 0, i = 0; i < array.length; i++) {
+            if (array[i] != number) {
+                array[j] = array[i];
+                j++;
             }
-            array[array.length - 1] = arr[arr.length - 1];
-            array[index - 1] = num;
-
-            System.out.print("new Array = " + Arrays.toString(array));
-        } while (index < 0 || index >= arr.length);
+        }
+        if (!check) {
+            System.out.println("Not found");
+        }
+        System.out.println("Mảng còn lại sau khi xóa phần tử " +number + " là: ");
+        for (int i = 0; i < array.length - count; i++) {
+            System.out.print(array[i] + "\t");
+        }
     }
 }
