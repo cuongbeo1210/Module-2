@@ -10,7 +10,8 @@ public class hienThiCacLoaiHinh {
             System.out.println("2. Draw the square triangle");
             System.out.println("3. Draw the isosceles triangle");
             System.out.println("4. Draw the hollow rectangle");
-            System.out.println("5. Exit");
+            System.out.println("5. Draw the pyramid");
+            System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             choice = input.nextInt();
             switch (choice){
@@ -50,6 +51,19 @@ public class hienThiCacLoaiHinh {
                     }
                     break;
                 case 5 :
+                    int k = 0;
+                    for (int i = 1; i <= 4; i++, k = 0) {
+                        for (int space = 1; space <= 4 - i; space++) {
+                            System.out.print("   ");
+                        }
+                        while (k != 2 * i - 1) {
+                            System.out.print(" * ");
+                            k++;
+                        }
+                        System.out.println();
+                    }
+                    break;
+                case 6 :
                     System.exit(0);
                     break;
             }
