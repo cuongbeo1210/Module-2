@@ -1,11 +1,12 @@
 public class FirstDegreeEquation {
-    double B, C;
-    public FirstDegreeEquation(double num1, double num2){
-        this.B = num1;
-        this.C = num2;
+    double b, c;
+
+    public FirstDegreeEquation(double num1, double num2) {
+        this.b = num1;
+        this.c = num2;
     }
 
     public double getRoot() {
-        return -this.C/ this.B;
+        return - this.c / this.b;
     }
 }
