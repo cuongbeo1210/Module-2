@@ -23,9 +23,14 @@ public class deleteElemInArray {
         if (!check) {
             System.out.println("Not found");
         }
+        for (int i = 0; i < count; i++) {
+            for (int j = array.length - count; j < array.length; j++) {
+                array[j] = 0;
+            }
+        }
         System.out.println("Mảng còn lại sau khi xóa phần tử " +number + " là: ");
-        for (int i = 0; i < array.length - count; i++) {
-            System.out.print(array[i] + "\t");
+        for (int X : array) {
+            System.out.printf("%d \t", X);
         }
     }
 }
