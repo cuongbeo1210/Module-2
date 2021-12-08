@@ -22,7 +22,7 @@ public class giaiPTBac2 {
                 }
             } else {
                 FirstDegreeEquation PTBac1 = new FirstDegreeEquation(num2, num3);
-                System.out.printf("The equation has solution: X = %.3f", PTBac1.getRoot());
+                System.out.printf("The equation has solution: X = %.1f", PTBac1.getRoot());
             }
         } else {
             QuadraticEquation PTBac2 = new QuadraticEquation(num1, num2, num3);
@@ -31,9 +31,9 @@ public class giaiPTBac2 {
             if (delta < 0) {
                 System.out.print("The equation has no solution");
             } else if (delta == 0) {
-                System.out.printf("The equation has solution: X = %.3f", PTBac2.getRoot1());
+                System.out.printf("The equation has solution: X = %.1f", PTBac2.getRoot1());
             } else {
-                System.out.printf("The equation has solutions: X1 = %.3f, X2 = %.3f", PTBac2.getRoot1(), PTBac2.getRoot2());
+                System.out.printf("The equation has solutions: X1 = %.1f, X2 = %.1f", PTBac2.getRoot1(), PTBac2.getRoot2());
             }
         }
     }

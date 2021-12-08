@@ -23,7 +23,7 @@ public class QuadraticEquation {
     }
 
     public double getDiscriminant() {
-        return (this.b * this.b - 4 * this.a * this.c);
+        return (getB() * getB() - 4 * getA() * getC());
     }
 
     public double getRoot1() {
