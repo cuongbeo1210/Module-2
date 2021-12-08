@@ -77,8 +77,8 @@ public class classFan {
     public static void main(String[] args) {
         classFan fan1 =new classFan(3,true,"yellow",10);
         classFan fan2 =new classFan(2,false,"blue",5);
-        System.out.println(fan1.toString());
-        System.out.println(fan2.toString());
+        System.out.println(fan1);
+        System.out.println(fan2);
     }
 
 }
