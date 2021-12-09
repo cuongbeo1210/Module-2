@@ -59,7 +59,7 @@ public class Main {
        System.out.print("Nhập ID sản phẩm cần sử:");
        int id = scanner.nextInt();
        for (int i = 0; i < product.length ; i++) {
-           if (product[i].ID == id){
+           if (product[i].getID() == id){
                System.out.print("Nhap ten san pham: ");
                product[i].setName(scanner.nextLine());
                System.out.print("Nhap gia san pham: ");
