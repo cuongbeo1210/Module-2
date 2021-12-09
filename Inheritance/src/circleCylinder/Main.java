@@ -7,6 +7,8 @@ public class Main {
         Circle circle = new Circle();
         Input(circle);
         System.out.println(circle);
+        Cylinder cylinder = new Cylinder(3,"Red", 4);
+        System.out.println(cylinder);
     }
     public static void Input(Circle circle){
         Scanner scanner = new Scanner(System.in);
@@ -14,7 +16,6 @@ public class Main {
         circle.setColor(scanner.nextLine());
         System.out.print("Enter Radius : ");
         circle.setRadius(scanner.nextDouble());
-
     }
 }
 
