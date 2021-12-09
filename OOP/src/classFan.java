@@ -3,6 +3,9 @@ public class classFan {
     private final int MEDIUM = 2;
     private final int FAST = 3;
     private int speed = 1;
+    private boolean on = false;
+    private String color = "blue";
+    private double radius = 5;
 
     public int getSLOW() {
         return SLOW;
@@ -54,11 +57,6 @@ public class classFan {
     public void setRadius(double radius) {
         this.radius = radius;
     }
-
-    private boolean on = false;
-    private String color = "blue";
-    private double radius = 5;
-
 
 
     @Override
