@@ -17,6 +17,10 @@ public class Main {
         }
         System.out.println("Tổng tiền sản phẩm : "+sum);
         FindProduct(scanner, products);
+        EditProduct(scanner,products);
+        for (Product x: products) {
+            System.out.println(x);
+        }
     }
 
     public static Product createProduct(Scanner scanner) {
