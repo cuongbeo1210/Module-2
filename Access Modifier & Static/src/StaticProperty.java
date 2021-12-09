@@ -8,6 +8,5 @@ public class StaticProperty {
         Car car2 = new Car("Mazda 6","Skyactiv 6");
 
         System.out.println(Car.numberOfCars);
-
     }
 }
