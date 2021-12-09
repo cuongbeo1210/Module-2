@@ -21,6 +21,19 @@ public class point3D extends point2D {
         this.z = z;
     }
 
+    public void setXYZ(float x, float y, float z) {
+        setXY(x, y);
+        this.z = z;
+    }
+
+    public float[] getXYZ() {
+        float[] test = new float[3];
+        test[0] = this.z;
+        test[1] = this.z;
+        test[2] = this.z;
+        return test;
+    }
+
     @Override
     public String toString() {
         return "(" + super.getX() + "," + super.getY() + "," + this.z + ")";
