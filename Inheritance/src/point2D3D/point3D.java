@@ -28,8 +28,8 @@ public class point3D extends point2D {
 
     public float[] getXYZ() {
         float[] test = new float[3];
-        test[0] = this.z;
-        test[1] = this.z;
+        test[0] = super.getX();
+        test[1] = super.getY();
         test[2] = this.z;
         return test;
     }
