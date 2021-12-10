@@ -30,5 +30,4 @@ public class Main {
         System.out.println(first2DPoint);
         System.out.println(first3DPoint);
     }
-
 }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class MainProduct {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Product> products = new ArrayList<Product>();
+        ArrayList<Product> products = new ArrayList<>();
         enterProduct(scanner, products);
         sumPrice(products);
         findProduct(scanner, products);
@@ -50,10 +50,10 @@ public class MainProduct {
         boolean check = false;
         System.out.print("Nhập ID sản phẩm muốn tìm : ");
         int id = scanner.nextInt();
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getID() == id) {
+        for (Product product : products) {
+            if (product.getID() == id) {
                 check = true;
-                System.out.println(products.get(i));
+                System.out.println(product);
                 break;
             }
         }
@@ -71,34 +71,34 @@ public class MainProduct {
         System.out.println(products);
     }
 
-    public static void editProduct(Scanner scanner, ArrayList<Product> products){
+    public static void editProduct(Scanner scanner, ArrayList<Product> products) {
         boolean check = false;
         System.out.print("Nhập ID sản phẩm muốn sửa : ");
         int id = scanner.nextInt();
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getID() == id) {
+        for (Product product : products) {
+            if (product.getID() == id) {
                 check = true;
                 System.out.print("Nhập giá mới : ");
-                products.get(i).setPrice(scanner.nextDouble());
+                product.setPrice(scanner.nextDouble());
                 System.out.print("Nhập tên mới : ");
                 scanner.nextLine();
-                products.get(i).setName(scanner.nextLine());
+                product.setName(scanner.nextLine());
                 System.out.print("Nhập kiểu mới : ");
-                products.get(i).setType(scanner.nextLine());
-                System.out.println(products.get(i));
+                product.setType(scanner.nextLine());
+                System.out.println(product);
                 break;
             }
         }
-        if (!check){
+        if (!check) {
             System.out.println("ID không tồn tại");
         }
     }
 
-    public static void sumPrice(ArrayList<Product> products){
+    public static void sumPrice(ArrayList<Product> products) {
         double sum = 0;
-        for(Product product : products){
+        for (Product product : products) {
             sum += product.getPrice();
         }
-        System.out.println("Tổng giá tiền là : "+sum);
+        System.out.println("Tổng giá tiền là : " + sum);
     }
 }
