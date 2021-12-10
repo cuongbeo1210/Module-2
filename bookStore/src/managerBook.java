@@ -18,12 +18,9 @@ public class managerBook {
     }
 
     public static void enterBooks(Scanner scanner, ArrayList<Book> books) {
-//        System.out.print("Nhập số lượng sách : ");
-//        int number = scanner.nextInt();
         for (int i = 0; i < 1; i++) {
             books.add(createBook(scanner));
         }
-//        System.out.println(books);
     }
 
     public static scienceBook enterScienceBook(Scanner scanner, ArrayList<Book> books) {
@@ -66,51 +63,140 @@ public class managerBook {
         }
         System.out.println("Cuốn sách rẻ nhất Shop hiện tại là : " +books.get(index1).getName()+ " với giá : " +books.get(index1).getPrice());
     }
-    public static void findBook(Scanner scanner, ArrayList<Book> books){
+    public static void findBook(Scanner scanner, ArrayList<scienceBook> scienceBooks){
+        boolean check = false;
         System.out.print("Nhập thể loại sách muốn tìm : ");
         String typeBook = scanner.nextLine();
-//        for (int i = 0; i < books.size(); i++) {
-//            if (books.get(i).){
-//
-//            }
-//        }
+        for (scienceBook scienceBook : scienceBooks) {
+            if (scienceBook.getType().equals(typeBook)) {
+                check = true;
+                System.out.println(scienceBook);
+                break;
+            }
+        }
+        if (!check) {
+            System.out.println("Không tìm thấy thể loại sách này");
+        }
+    }
+    public static novelBook createNovel (Scanner scanner, ArrayList<Book> books){
+        scanner.nextLine();
+        System.out.print("Enter Name's Novel : ");
+        String name = scanner.nextLine();
+        System.out.print("Enter Author : ");
+        String author = scanner.nextLine();
+        System.out.print("Enter Quantity : ");
+        int quantity = scanner.nextInt();
+        System.out.print("Enter Price : ");
+        double price = scanner.nextDouble();
+        System.out.println("Enter Publication Date (YY/MM/DD) : ");
+        LocalDate nsx = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        return new novelBook(name, quantity, price, nsx, author);
+    }
+    public static void findNovel(Scanner scanner, ArrayList<novelBook> novelBooks){
+        scanner.nextLine();
+        boolean check = false;
+        System.out.print("Nhập tên tác giả : ");
+        String author = scanner.nextLine();
+        for (novelBook novelBook: novelBooks) {
+            if (novelBook.getAuthor().equals(author)){
+                check = true;
+                System.out.println(novelBook);
+                break;
+            }
+        }
+        if (!check) System.out.println("Không tìm thấy sách nào của tác giả này");
+    }
+    public static double averagePriceScienceBook(ArrayList<scienceBook> scienceBooks){
+        double averagePrice = 0;
+        for (scienceBook scienceBook : scienceBooks){
+            averagePrice += scienceBook.getPrice();
+        }
+        return averagePrice/scienceBooks.size();
     }
 
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Book> books = new ArrayList<>();
+        ArrayList<scienceBook> scienceBooks = new ArrayList<>();
+        ArrayList<novelBook> novelBooks = new ArrayList<>();
 //        enterBooks(scanner, books);
         int choice = -1;
         Scanner input = new Scanner(System.in);
         while (choice != 0) {
             System.out.println("Menu");
-            System.out.println("1. Nhập sách khoa học");
-            System.out.println("2. Nhập sách bình thường");
-            System.out.println("3. Hiển thị kho sách");
-            System.out.println("4. Hiển thị quyển sách đắt nhất");
-            System.out.println("5. Hiển thị quyển sách rẻ nhất");
+            System.out.println("1. Nhập sách");
+            System.out.println("2. Tìm kiếm sách");
+            System.out.println("3. Hiển thị");
             System.out.print("Enter your choice: ");
             choice = input.nextInt();
             switch (choice) {
                 case 1:
-                    books.add(enterScienceBook(scanner, books));
+                    System.out.println("1. Nhập sách khoa học");
+                    System.out.println("2. Nhập sách bình thường");
+                    System.out.println("3. Nhập sách tiểu thuyết");
+                    System.out.print("Nhập lựa chọn của bạn : ");
+                    int choice1 = input.nextInt();
+                    switch (choice1) {
+                        case 1:
+                            Book book = new scienceBook();
+                            book = enterScienceBook(scanner, books);
+                            books.add(book);
+                            scienceBook SB = (scienceBook) book;
+                            scienceBooks.add(SB);
 //                    System.out.println(books);
+                            break;
+                        case 2:
+                            enterBooks(scanner, books);
+                            break;
+                        case 3:
+                            Book book1 = new novelBook();
+                            book1 = createNovel(scanner, books);
+                            books.add(book1);
+                            novelBook NB = (novelBook) book1;
+                            novelBooks.add(NB);
+                            break;
+
+                    }
                     break;
                 case 2:
-                    enterBooks(scanner, books);
+                    System.out.println("1. Tìm sách theo thể loại");
+                    System.out.println("2. Tìm sách theo tên tác giả");
+                    System.out.print("Nhập lựa chọn của bạn : ");
+                    int choice2 = input.nextInt();
+                    switch (choice2) {
+                        case 1:
+                            findBook(scanner, scienceBooks);
+                            break;
+                        case 2:
+                            findNovel(scanner, novelBooks);
+                            break;
+                    }
                     break;
+
                 case 3:
-                    display(books);
-                    break;
-                case 4:
-                    findMaxPriceBook(books);
-                    break;
-                case 5:
-                    findMinPriceBook(books);
+                    System.out.println("1. Hiển thị kho sách");
+                    System.out.println("2. Hiển thị quyển sách đắt nhất");
+                    System.out.println("3. Hiển thị quyển sách rẻ nhất");
+                    System.out.println("4. Hiển thị đơn giá trung bình sách Khoa Học");
+                    System.out.print("Nhập lựa chọn của bạn : ");
+                    int choice3 = input.nextInt();
+                    switch (choice3) {
+                        case 1:
+                            display(books);
+                            break;
+                        case 2:
+                            findMaxPriceBook(books);
+                            break;
+                        case 3:
+                            findMinPriceBook(books);
+                            break;
+                        case 4:
+                            System.out.println("Đơn giá trung bình sách khoa học là : "+(averagePriceScienceBook(scienceBooks)));;
+                            break;
+                    }
                     break;
             }
-
         }
     }
 }

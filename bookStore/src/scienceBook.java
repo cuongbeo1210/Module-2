@@ -7,6 +7,10 @@ public class scienceBook extends Book {
         this.type = type;
     }
 
+    public scienceBook() {
+
+    }
+
     public String getType() {
         return type;
     }
