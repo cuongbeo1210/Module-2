@@ -129,10 +129,18 @@ public class managerBook {
         System.out.println(novelBooks1);
     }
     public static void findAboutBookPrice(Scanner scanner, ArrayList<Book> books){
+        double temp;
         boolean check = false;
-        System.out.print("Nhập khoảng giá sách muốn tìm kiếm : ");
+        System.out.println("Nhập khoảng giá sách muốn tìm kiếm : ");
+        System.out.print("Từ : ");
         double price = scanner.nextDouble();
+        System.out.print("Đến : ");
         double price1 = scanner.nextDouble();
+        if(price > price1){
+            temp = price;
+            price = price1;
+            price1 = temp;
+        }
         for (Book book : books) {
             if(book.getPrice() >= price && book.getPrice() <= price1){
                 System.out.println(book);
