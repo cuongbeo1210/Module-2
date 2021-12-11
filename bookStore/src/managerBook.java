@@ -113,6 +113,20 @@ public class managerBook {
         }
         return averagePrice/scienceBooks.size();
     }
+    public static void findAllBooksOfAuthor(Scanner scanner,ArrayList<novelBook> novelBooks){
+        ArrayList<novelBook> novelBooks1 = new ArrayList<>();
+        boolean check = false;
+        System.out.print("Nhập tên tác giả muốn tìm : ");
+        String str = scanner.nextLine();
+        for (novelBook novelBook: novelBooks) {
+            if(novelBook.getAuthor().equals(str)){
+                novelBooks1.add(novelBook);
+                check = true;
+            }
+        }
+        if (!check) System.out.println("Không có sách nào của tác giả này");
+        System.out.println(novelBooks1);
+    }
 
 
     public static void main(String[] args) {
@@ -162,6 +176,7 @@ public class managerBook {
                 case 2:
                     System.out.println("1. Tìm sách theo thể loại");
                     System.out.println("2. Tìm sách theo tên tác giả");
+                    System.out.println("3. Tìm tất cả sách của tác giả");
                     System.out.print("Nhập lựa chọn của bạn : ");
                     int choice2 = input.nextInt();
                     switch (choice2) {
@@ -170,6 +185,9 @@ public class managerBook {
                             break;
                         case 2:
                             findNovel(scanner, novelBooks);
+                            break;
+                        case 3:
+                            findAllBooksOfAuthor(scanner, novelBooks);
                             break;
                     }
                     break;

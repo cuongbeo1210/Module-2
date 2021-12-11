@@ -23,4 +23,11 @@ public class scienceBook extends Book {
         super(name, quantity, price, nsx);
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "scienceBook{"+super.toString()+" "+
+                "type='" + type + '\'' +
+                '}';
+    }
 }

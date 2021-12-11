@@ -23,4 +23,10 @@ public class novelBook extends Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    @Override
+    public String toString() {
+        return "novelBook{ " +super.toString()   +" "+   "author='" + author + '\'' +
+                '}';
+    }
 }
