@@ -127,6 +127,19 @@ public class managerBook {
         if (!check) System.out.println("Không có sách nào của tác giả này");
         System.out.println(novelBooks1);
     }
+    public static void findAboutBookPrice(Scanner scanner, ArrayList<Book> books){
+        boolean check = false;
+        System.out.print("Nhập khoảng giá sách muốn tìm kiếm : ");
+        double price = scanner.nextDouble();
+        double price1 = scanner.nextDouble();
+        for (Book book : books) {
+            if(book.getPrice() >= price && book.getPrice() <= price1){
+                System.out.println(book);
+                check = true;
+            }
+        }
+        if (!check) System.out.println("Không có sách nào trong khoảng này");
+    }
 
 
     public static void main(String[] args) {
@@ -177,6 +190,7 @@ public class managerBook {
                     System.out.println("1. Tìm sách theo thể loại");
                     System.out.println("2. Tìm sách theo tên tác giả");
                     System.out.println("3. Tìm tất cả sách của tác giả");
+                    System.out.println("4. Tìm sách trong khoảng giá");
                     System.out.print("Nhập lựa chọn của bạn : ");
                     int choice2 = input.nextInt();
                     switch (choice2) {
@@ -189,6 +203,9 @@ public class managerBook {
                         case 3:
                             findAllBooksOfAuthor(scanner, novelBooks);
                             break;
+                        case 4:
+                            findAboutBookPrice(scanner, books);
+                            break;
                     }
                     break;
 
@@ -197,6 +214,8 @@ public class managerBook {
                     System.out.println("2. Hiển thị quyển sách đắt nhất");
                     System.out.println("3. Hiển thị quyển sách rẻ nhất");
                     System.out.println("4. Hiển thị đơn giá trung bình sách Khoa Học");
+                    System.out.println("5. Hiển thị tất cả sách Khoa Học");
+                    System.out.println("6. Hiển thị tất cả sách Tiểu Thuyết");
                     System.out.print("Nhập lựa chọn của bạn : ");
                     int choice3 = input.nextInt();
                     switch (choice3) {
@@ -211,6 +230,12 @@ public class managerBook {
                             break;
                         case 4:
                             System.out.println("Đơn giá trung bình sách khoa học là : "+(averagePriceScienceBook(scienceBooks)));;
+                            break;
+                        case 5:
+                            System.out.println(scienceBooks);
+                            break;
+                        case 6:
+                            System.out.println(novelBooks);
                             break;
                     }
                     break;
