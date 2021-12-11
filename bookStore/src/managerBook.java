@@ -116,6 +116,7 @@ public class managerBook {
     public static void findAllBooksOfAuthor(Scanner scanner,ArrayList<novelBook> novelBooks){
         ArrayList<novelBook> novelBooks1 = new ArrayList<>();
         boolean check = false;
+        scanner.nextLine();
         System.out.print("Nhập tên tác giả muốn tìm : ");
         String str = scanner.nextLine();
         for (novelBook novelBook: novelBooks) {
@@ -155,6 +156,7 @@ public class managerBook {
             System.out.println("1. Nhập sách");
             System.out.println("2. Tìm kiếm sách");
             System.out.println("3. Hiển thị");
+            System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
             choice = input.nextInt();
             switch (choice) {
@@ -239,6 +241,8 @@ public class managerBook {
                             break;
                     }
                     break;
+                case 4:
+                    System.exit(0);
             }
         }
     }
