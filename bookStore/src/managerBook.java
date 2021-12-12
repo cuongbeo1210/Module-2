@@ -64,6 +64,7 @@ public class managerBook {
         System.out.println("Cuốn sách rẻ nhất Shop hiện tại là : " +books.get(index1).getName()+ " với giá : " +books.get(index1).getPrice());
     }
     public static void findBook(Scanner scanner, ArrayList<scienceBook> scienceBooks){
+        scanner.nextLine();
         boolean check = false;
         System.out.print("Nhập thể loại sách muốn tìm : ");
         String typeBook = scanner.nextLine();
@@ -71,7 +72,6 @@ public class managerBook {
             if (scienceBook.getType().equals(typeBook)) {
                 check = true;
                 System.out.println(scienceBook);
-                break;
             }
         }
         if (!check) {
@@ -101,7 +101,6 @@ public class managerBook {
             if (novelBook.getAuthor().equals(author)){
                 check = true;
                 System.out.println(novelBook);
-                break;
             }
         }
         if (!check) System.out.println("Không tìm thấy sách nào của tác giả này");
@@ -165,7 +164,7 @@ public class managerBook {
             System.out.println("2. Tìm kiếm sách");
             System.out.println("3. Hiển thị");
             System.out.println("0. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.print("Nhập lựa chọn của bạn : ");
             choice = input.nextInt();
             switch (choice) {
                 case 1:
@@ -242,10 +241,12 @@ public class managerBook {
                             System.out.println("Đơn giá trung bình sách khoa học là : "+(averagePriceScienceBook(scienceBooks)));;
                             break;
                         case 5:
-                            System.out.println(scienceBooks);
+                            if(scienceBooks.size() > 0) System.out.println(scienceBooks);
+                            else  System.out.println("Hiện tại không có quyến sách khoa học nào");
                             break;
                         case 6:
-                            System.out.println(novelBooks);
+                            if (novelBooks.size() > 0)  System.out.println(novelBooks);
+                            else System.out.println("Hiện tại không có quyến tiểu thuyết nào");
                             break;
                     }
                     break;

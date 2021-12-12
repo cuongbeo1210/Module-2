@@ -28,6 +28,6 @@ public class scienceBook extends Book {
     public String toString() {
         return "scienceBook{"+super.toString()+" "+
                 "type='" + type + '\'' +
-                '}';
+                '}'+'\n';
     }
 }
