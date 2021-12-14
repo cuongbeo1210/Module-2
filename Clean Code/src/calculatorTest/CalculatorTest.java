@@ -64,7 +64,7 @@ class CalculatorTest {
         char operator = '/';
 
         assertThrows(RuntimeException.class,
-                ()-> Calculator.calculate(firstOperand, secondOperand, operator));
+                () -> Calculator.calculate(firstOperand, secondOperand, operator));
     }
 
     @Test
@@ -75,6 +75,6 @@ class CalculatorTest {
         char operator = '=';
 
         assertThrows(RuntimeException.class,
-                ()-> Calculator.calculate(firstOperand, secondOperand, operator));
+                () -> Calculator.calculate(firstOperand, secondOperand, operator));
     }
 }
