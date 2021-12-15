@@ -1,7 +1,9 @@
-package simplecaculator;
+package simplecalculator;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import simplecaculator.SimpleCalculator;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SimpleCalculatorTest {
