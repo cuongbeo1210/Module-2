@@ -1,5 +1,7 @@
 package trienkhaiphuongthucArray;
 
+import static com.sun.deploy.uitoolkit.impl.awt.AWTClientPrintHelper.print;
+
 public class MyListTest {
     public static void main(String[] args) {
         MyList<Integer> list = new MyList<>();
@@ -15,16 +17,17 @@ public class MyListTest {
 //        list.add(21,1);
 //        list.add(100,3);
         print(list.getData());
+        System.out.println("------------------");
 //        MyList<Integer> clone = list.clone();
 //        System.out.println(clone.contains(12));
 //        System.out.println(clone.contains(10));
 //        System.out.println(clone.get(3));
 //        System.out.println(clone.size());
-////        clone.clear();
+        list.clear();
 //        System.out.println(clone.size());
 //        print(clone.getData());
 //
-
+    print(list.getData());
 
     }
     static void print(Object[] list) {

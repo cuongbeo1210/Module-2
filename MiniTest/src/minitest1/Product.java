@@ -1,3 +1,5 @@
+package minitest1;
+
 public class Product {
     private int ID;
     private String name;
@@ -50,7 +52,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "minitest1.Product{" +
                 "ID=" + ID +
                 ", name='" + name + '\'' +
                 ", price=" + price +
