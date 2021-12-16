@@ -25,7 +25,7 @@ public class MyList<E> {
 
     @Override
     public String toString() {
-        return "MyList{" +
+        return "MyLinkedList{" +
                 "size=" + size +
                 ", elements=" + Arrays.toString(elements) +
                 '}';
