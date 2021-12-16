@@ -28,15 +28,13 @@ public class MyList<E> {
         data[size - 1] = e;
     }
 
-    public boolean add(E e, int index) {
+    public void add(E e, int index) {
         if (index >= 0 && index <= size) {
             size += 1;
             ensureCapa();
             if (size - 1 - index >= 0) System.arraycopy(data, index, data, index + 1, size - 1 - index);
             data[index] = e;
-            return true;
         }
-        return false;
     }
 
     public E get(int index) {
@@ -63,13 +61,11 @@ public class MyList<E> {
         return size;
     }
 
-    public boolean remove(int index) {
+    public void remove(int index) {
         if (index >= 0 && index < size) {
-            System.arraycopy(data, index + 1, data, index, size - index);
+            System.arraycopy(data, index + 1, data, index, size  - index);
             size -= 1;
-            return true;
         }
-        return false;
     }
 
     public void clear() {

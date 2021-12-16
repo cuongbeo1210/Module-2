@@ -5,9 +5,9 @@ public class MyLinkedList {
     private int numNode;
     private boolean flag;
 
-    public class Node {
+    public static class Node {
         private Node next;
-        private Object data;
+        private final Object data;
 
         public Node(Object data) {
             this.data = data;
