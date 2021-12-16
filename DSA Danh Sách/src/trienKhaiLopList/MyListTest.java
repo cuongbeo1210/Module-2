@@ -8,6 +8,8 @@ public class MyListTest {
         listInteger.add(3);
         listInteger.add(3);
         listInteger.add(3);
+        listInteger.add(3);
+        listInteger.add(3);
 
 
         System.out.println("element 4: "+listInteger.get(4));

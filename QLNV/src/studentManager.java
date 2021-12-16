@@ -1,8 +1,6 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
-public class studentManager  {
+public class studentManager implements Comparator<Student> {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Student> students = new ArrayList<>();
@@ -16,6 +14,12 @@ public class studentManager  {
         students.add(students3);
         students.add(students2);
         students.add(students1);
+        students.sort(new Comparator<Student>() {
+            @Override
+            public int compare(Student sv1, Student sv2) {
+                return Double.compare(sv2.getAvgPoint(), sv1.getAvgPoint());
+            }
+        });
 
     }
 
@@ -92,4 +96,10 @@ public class studentManager  {
     }
 
 
+    @Override
+    public int compare(Student o1, Student o2) {
+        return 0;
+    }
 }
+
+
