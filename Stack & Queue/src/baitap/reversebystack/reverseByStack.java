@@ -1,4 +1,4 @@
-package thuchanh.reversebystack;
+package baitap.reversebystack;
 
 public class reverseByStack {
     public static void reverse(StringBuffer str) {

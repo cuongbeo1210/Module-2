@@ -1,4 +1,4 @@
-package thuchanh.reversebystack;
+package baitap.reversebystack;
 
 public class Stack {
     int size;
