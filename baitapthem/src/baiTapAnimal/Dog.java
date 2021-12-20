@@ -10,8 +10,6 @@ public class Dog extends Animal implements animalAction {
         super(name, age, weight);
     }
 
-    public Dog() {
-    }
 
     @Override
     public String makeSound() {

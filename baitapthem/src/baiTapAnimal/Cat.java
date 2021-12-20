@@ -15,6 +15,4 @@ public class Cat extends Animal implements animalAction {
         super(name, age, weight);
     }
 
-    public Cat() {
-    }
 }

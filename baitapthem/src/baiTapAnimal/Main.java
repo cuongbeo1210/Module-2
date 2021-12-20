@@ -1,4 +1,5 @@
 package baiTapAnimal;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,6 +12,10 @@ public class Main {
             System.out.println("Menu");
             System.out.println("1. Nhập động vật mới");
             System.out.println("2. Hiển thị danh sách");
+            System.out.println("3. Sửa theo tên");
+            System.out.println("4. Lấy thông tin theo tên");
+            System.out.println("5. Hiển thị ra tất cả chó");
+            System.out.println("6. Hiển thị con vật trong khoảng cân nặng");
             System.out.print("Nhập lựa chọn của bạn : ");
             choice = scanner.nextInt();
             switch (choice) {
@@ -19,7 +24,7 @@ public class Main {
                     do {
                         System.out.println("1. Chó");
                         System.out.println("2. Mèo");
-                        System.out.println("2. Chuột");
+                        System.out.println("3. Chuột");
                         System.out.println("0. Quay lại");
                         System.out.println("Nhập lựa chọn của bạn: ");
                         choice1 = scanner.nextInt();
@@ -31,15 +36,13 @@ public class Main {
                                 } else {
                                     Dog dog1 = (Dog) Manager.createAnimal(scanner, choice1);
                                     animals.add(dog1);
-//                                        boolean check = false;
                                     for (int i = 0; i < animals.size(); i++) {
                                         for (int k = 0; k < animals.size(); k++) {
-                                            if (i == k)   {
+                                            if (i == k) {
                                                 break;
                                             } else {
                                                 if (animals.get(i).getName().equals(animals.get(k).getName())) {
                                                     System.out.println("Trùng tên rồi ^^");
-//                                                check = true;
                                                     animals.remove(k);
                                                     break;
                                                 }
@@ -47,9 +50,6 @@ public class Main {
                                         }
                                     }
                                 }
-//                                        if (!check) {
-//                                            animals.add(dog1);
-//
                                 break;
                             case 2:
                                 if (animals.size() < 1) {
@@ -58,15 +58,13 @@ public class Main {
                                 } else {
                                     Cat cat1 = (Cat) Manager.createAnimal(scanner, choice1);
                                     animals.add(cat1);
-//                                        boolean check = false;
                                     for (int i = 0; i < animals.size(); i++) {
                                         for (int k = 0; k < animals.size(); k++) {
-                                            if (i == k)   {
+                                            if (i == k) {
                                                 break;
                                             } else {
                                                 if (animals.get(i).getName().equals(animals.get(k).getName())) {
                                                     System.out.println("Trùng tên rồi ^^");
-//                                                check = true;
                                                     animals.remove(k);
                                                     break;
                                                 }
@@ -82,15 +80,13 @@ public class Main {
                                 } else {
                                     Mouse mouse1 = (Mouse) Manager.createAnimal(scanner, choice1);
                                     animals.add(mouse1);
-//                                        boolean check = false;
                                     for (int i = 0; i < animals.size(); i++) {
                                         for (int k = 0; k < animals.size(); k++) {
-                                            if (i == k)   {
+                                            if (i == k) {
                                                 break;
                                             } else {
                                                 if (animals.get(i).getName().equals(animals.get(k).getName())) {
                                                     System.out.println("Trùng tên rồi ^^");
-//                                                check = true;
                                                     animals.remove(k);
                                                     break;
                                                 }
@@ -107,12 +103,22 @@ public class Main {
                     Manager.display(animals);
                     break;
                 case 3:
-
+                    Manager.editAnimal(animals, scanner);
+                    break;
+                case 4:
+                    Manager.getInfor(scanner, animals);
+                    break;
+                case 5:
+                    Manager.displayAllDogs(scanner, animals);
+                    break;
+                case 6:
+                    Manager.rangeWeight(scanner, animals);
+                    break;
             }
         }
         while (choice != 0);
-        }
-
     }
+
+}
 
 

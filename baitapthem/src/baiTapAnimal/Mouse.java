@@ -15,6 +15,4 @@ public class Mouse extends Animal implements animalAction{
         super(name, age, weight);
     }
 
-    public Mouse() {
-    }
 }

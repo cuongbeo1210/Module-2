@@ -40,10 +40,6 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", weight=" + weight +
-                '}';
+        return String.format("Name: %5s, Age: %5d, Weight: %5.2f", name, age, weight);
     }
 }
