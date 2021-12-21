@@ -1,0 +1,35 @@
+package comparator_comparable;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Student student = new Student("Cuong", 30, "HT");
+        Student student1 = new Student("Béo", 36, "HN");
+        Student student2 = new Student("Đẹp", 39, "HT");
+        Student student3 = new Student("Trai", 48, "HT");
+
+        List<Student> lists = new ArrayList<>();
+        lists.add(student);
+        lists.add(student1);
+        lists.add(student2);
+        lists.add(student3);
+        Collections.sort(lists);
+        for (Student st : lists) {
+            System.out.println(st.toString());
+        }
+        System.out.println("------------------");
+
+        AgeComparator ageComparator = new AgeComparator();
+        lists.sort(ageComparator);
+        System.out.println("So sanh theo tuoi : ");
+        for (Student st : lists) {
+            System.out.println(st.toString());
+        }
+    }
+}
+
