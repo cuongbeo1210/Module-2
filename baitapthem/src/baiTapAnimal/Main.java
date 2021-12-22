@@ -16,6 +16,7 @@ public class Main {
             System.out.println("4. Lấy thông tin theo tên");
             System.out.println("5. Hiển thị ra tất cả chó");
             System.out.println("6. Hiển thị con vật trong khoảng cân nặng");
+            System.out.println("0. Exit");
             System.out.print("Nhập lựa chọn của bạn : ");
             choice = scanner.nextInt();
             switch (choice) {
@@ -36,19 +37,7 @@ public class Main {
                                 } else {
                                     Dog dog1 = (Dog) Manager.createAnimal(scanner, choice1);
                                     animals.add(dog1);
-                                    for (int i = 0; i < animals.size(); i++) {
-                                        for (int k = 0; k < animals.size(); k++) {
-                                            if (i == k) {
-                                                break;
-                                            } else {
-                                                if (animals.get(i).getName().equals(animals.get(k).getName())) {
-                                                    System.out.println("Trùng tên rồi ^^");
-                                                    animals.remove(k);
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                    }
+                                    Manager.checkSameName(animals);
                                 }
                                 break;
                             case 2:
@@ -58,19 +47,7 @@ public class Main {
                                 } else {
                                     Cat cat1 = (Cat) Manager.createAnimal(scanner, choice1);
                                     animals.add(cat1);
-                                    for (int i = 0; i < animals.size(); i++) {
-                                        for (int k = 0; k < animals.size(); k++) {
-                                            if (i == k) {
-                                                break;
-                                            } else {
-                                                if (animals.get(i).getName().equals(animals.get(k).getName())) {
-                                                    System.out.println("Trùng tên rồi ^^");
-                                                    animals.remove(k);
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                    }
+                                    Manager.checkSameName(animals);
                                 }
                                 break;
                             case 3:
@@ -80,19 +57,7 @@ public class Main {
                                 } else {
                                     Mouse mouse1 = (Mouse) Manager.createAnimal(scanner, choice1);
                                     animals.add(mouse1);
-                                    for (int i = 0; i < animals.size(); i++) {
-                                        for (int k = 0; k < animals.size(); k++) {
-                                            if (i == k) {
-                                                break;
-                                            } else {
-                                                if (animals.get(i).getName().equals(animals.get(k).getName())) {
-                                                    System.out.println("Trùng tên rồi ^^");
-                                                    animals.remove(k);
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                    }
+                                    Manager.checkSameName(animals);
                                 }
                                 break;
                         }
@@ -114,11 +79,13 @@ public class Main {
                 case 6:
                     Manager.rangeWeight(scanner, animals);
                     break;
+                case 0:
+                    System.exit(0);
+                    break;
             }
         }
         while (choice != 0);
     }
-
 }
 
 

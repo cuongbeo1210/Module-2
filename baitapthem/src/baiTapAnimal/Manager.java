@@ -112,6 +112,23 @@ public class Manager {
         animals.removeIf(animal -> animal.getName().equals(name));
     }
 
+    public static void checkSameName(ArrayList<Animal> animals) {
+        for (int i = 0; i < animals.size(); i++) {
+            for (int k = 0; k < animals.size(); k++) {
+                if (i == k) {
+                    break;
+                } else {
+                    if (animals.get(i).getName().equals(animals.get(k).getName())) {
+                        System.out.println("Trùng tên rồi ^^");
+                        animals.remove(k);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+
 }
 
 
