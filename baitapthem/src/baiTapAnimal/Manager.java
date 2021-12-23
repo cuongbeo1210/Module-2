@@ -105,7 +105,7 @@ public class Manager {
         }
         if (!check) System.out.println("Không tìm thấy");
     }
-    public void deleteByName(Scanner scanner, ArrayList<Animal> animals) {
+    public static void deleteByName(Scanner scanner, ArrayList<Animal> animals) {
         scanner.nextLine();
         System.out.print("Nhập tên muốn xóa: ");
         String name = scanner.nextLine();

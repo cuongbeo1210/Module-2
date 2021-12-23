@@ -9,15 +9,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {
-            System.out.println("Menu");
-            System.out.println("1. Nhập động vật mới");
-            System.out.println("2. Hiển thị danh sách");
-            System.out.println("3. Sửa theo tên");
-            System.out.println("4. Lấy thông tin theo tên");
-            System.out.println("5. Hiển thị ra tất cả chó");
-            System.out.println("6. Hiển thị con vật trong khoảng cân nặng");
-            System.out.println("0. Exit");
-            System.out.print("Nhập lựa chọn của bạn : ");
+            System.out.println("* * * * * * * * * Menu * * * * * * * * * * *");
+            System.out.println("*       1. Nhập động vật mới               *");
+            System.out.println("*       2. Hiển thị danh sách              *");
+            System.out.println("*       3. Sửa theo tên                    *");
+            System.out.println("*       4. Lấy thông tin theo tên          *");
+            System.out.println("*       5. Hiển thị ra tất cả chó          *");
+            System.out.println("*       6. Hiển thị trong khoảng cân nặng  *");
+            System.out.println("*       7. Xóa con vật theo tên            *");
+            System.out.println("*       0. Exit                            *");
+            System.out.println("* * * * * * * * *______* * * * * * * * * * *");
+            System.out.print("      Nhập lựa chọn của bạn : ");
             choice = scanner.nextInt();
             switch (choice) {
                 case 1:
@@ -78,6 +80,9 @@ public class Main {
                     break;
                 case 6:
                     Manager.rangeWeight(scanner, animals);
+                    break;
+                case 7:
+                    Manager.deleteByName(scanner, animals);
                     break;
                 case 0:
                     System.exit(0);
