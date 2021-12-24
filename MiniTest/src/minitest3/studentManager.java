@@ -73,9 +73,9 @@ public class studentManager {
         for (Student student : students){
             if (student.getId() == id){
                 check = true;
+                scanner.nextLine();
                 System.out.print("Nhập tên mới : ");
                 student.setName(scanner.nextLine());
-                scanner.nextLine();
                 System.out.print("Nhập tuổi mới : ");
                 student.setAge(scanner.nextInt());
                 System.out.print("Nhập điểm toán mới : ");
@@ -85,6 +85,7 @@ public class studentManager {
                 System.out.print("Nhập điểm hóa mới : ");
                 student.setChemistryPoint(scanner.nextDouble());
                 System.out.print("Sửa thành công !!!");
+                System.out.println();
             }
         }
         if (!check) System.out.println("Không có ID nào phù hợp");
@@ -94,10 +95,11 @@ public class studentManager {
         boolean check = false;
         System.out.print("Nhập ID sinh viên cần xóa : ");
         int id = scanner.nextInt();
-        for (Student student : students){
-            if (student.getId() == id){
+        for (int i = 0; i < students.size(); i++){
+            if (students.get(i).getId() == id){
                 check = true;
-                students.remove(student);
+                students.remove(i);
+                break;
             }
         }
         if (!check) System.out.println("Không tìm thấy ID phù hợp");

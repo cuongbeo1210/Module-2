@@ -77,6 +77,6 @@ public class Student extends Person {
                 ", physicPoint=" + physicPoint +
                 ", chemistryPoint=" + chemistryPoint +
                 ", averagePoint=" + getAveragePoint() +
-                '}';
+                '}'+'\n';
     }
 }
