@@ -118,8 +118,12 @@ public class Manager {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] strings = line.split(",");
-                students.add(new Student(strings[1], Integer.parseInt(strings[2]), Double.parseDouble(strings[3]), Double.parseDouble(strings[4]), Double.parseDouble(strings[5])));
+//                students.add(new Student(strings[1], Integer.parseInt(strings[2]), Double.parseDouble(strings[3]), Double.parseDouble(strings[4]), Double.parseDouble(strings[5])));
+                Student student = new Student(strings[1], Integer.parseInt(strings[2]), Double.parseDouble(strings[3]), Double.parseDouble(strings[4]), Double.parseDouble(strings[5]));
+                student.setId(Integer.parseInt(strings[0]));
+                students.add(student);
             }
+            Person.setVALUE(Person.getVALUE() - students.size());
         } catch (IOException e) {
             e.printStackTrace();
         }

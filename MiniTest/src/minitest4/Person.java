@@ -19,6 +19,17 @@ public class Person {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public static int getVALUE() {
+        return VALUE;
+    }
+
+    public static void setVALUE(int VALUE) {
+        Person.VALUE = VALUE;
+    }
 
     public String getName() {
         return name;
