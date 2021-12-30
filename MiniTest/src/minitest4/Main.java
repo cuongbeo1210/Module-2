@@ -12,7 +12,7 @@ public class Main {
             System.out.println("* * * * * * * * * Menu * * * * * * * * * * *");
             System.out.println("*       1. Tạo sinh viên mới               *");
             System.out.println("*       2. Hiển thị danh sách              *");
-            System.out.println("*       3. Sửa theo tên                    *");
+            System.out.println("*       3. Sửa theo ID                     *");
             System.out.println("*       4. Xóa sinh viên                   *");
             System.out.println("*       5. Điểm trung bình tăng dần        *");
             System.out.println("*       6. Điểm trung bình giảm dần        *");
