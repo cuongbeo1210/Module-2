@@ -11,9 +11,8 @@ public class Manager {
         String name = scanner.nextLine();
         System.out.print("Nhập tuổi : ");
         int age = Integer.parseInt(scanner.nextLine());
-        System.out.print("Chọn giới tính : ");
+        System.out.println("Chọn giới tính : ");
         String sex;
-        do {
             System.out.println("1. Nam");
             System.out.println("2. Nữ");
             System.out.println("3. Other");
@@ -32,8 +31,7 @@ public class Manager {
                     sex = "Unknown";
                     break;
             }
-        }
-        while (choice != 0);
+
         System.out.print("Nhập địa chỉ : ");
         String address = scanner.nextLine();
         System.out.print("Nhập điểm trung bình : ");
@@ -80,13 +78,19 @@ public class Manager {
         } else {
             for (Student student : students){
                 if (student.getAveragePoint() > 8){
-                    System.out.printf("Tên : %s - ĐTB : %f - Xếp Loại : Giỏi ",student.getName(),student.getAveragePoint());
+                    System.out.printf("Tên : %s - ĐTB : %.2f - Xếp Loại : Giỏi ",student.getName(),student.getAveragePoint());
+                    System.out.println();
                 } else if (student.getAveragePoint() > 6){
-                    System.out.printf("Tên : %s - ĐTB : %f - Xếp Loại : Khá ",student.getName(),student.getAveragePoint());
+                    System.out.printf("Tên : %s - ĐTB : %.2f - Xếp Loại : Khá ",student.getName(),student.getAveragePoint());
+                    System.out.println();
                 } else if (student.getAveragePoint() > 4.5){
-                    System.out.printf("Tên : %s - ĐTB : %f - Xếp Loại : Trung Bình ",student.getName(),student.getAveragePoint());
+                    System.out.printf("Tên : %s - ĐTB : %.2f - Xếp Loại : Trung Bình ",student.getName(),student.getAveragePoint());
+                    System.out.println();
                 }
-                else System.out.printf("Tên : %s - ĐTB : %f - Xếp Loại : Yếu ",student.getName(),student.getAveragePoint());
+                else{
+                    System.out.printf("Tên : %s - ĐTB : %.2f - Xếp Loại : Yếu ",student.getName(),student.getAveragePoint());
+                    System.out.println();
+                }
             }
         }
     }
