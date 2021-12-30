@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class Manager {
     public static final String PATH_NAME = "src/minitest4/student.csv";
     public static void createStudent(Scanner scanner, ArrayList<Student> students) {
+        if (students.size() > 0){
+            Person.setVALUE(students.get(students.size() - 1).getId() + 1);
+        }
         scanner.nextLine();
         System.out.print("Nhập tên : ");
         String name = scanner.nextLine();
@@ -106,8 +109,9 @@ public class Manager {
         if (!check) System.out.println("Không tìm thấy");
     }
 
-    public static ArrayList<Student> readFile(String path) {
-        ArrayList<Student> students = new ArrayList<>();
+    public static ArrayList<Student> readFile(String path, ArrayList<Student> students) {
+//        ArrayList<Student> students = new ArrayList<>();
+        students.clear();
         File file = new File(PATH_NAME);
 
         try {

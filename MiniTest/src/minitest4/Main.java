@@ -50,7 +50,7 @@ public class Main {
                     break;
                 case 9:
                     ArrayList<Student> newStudents;
-                    newStudents = Manager.readFile(Manager.PATH_NAME);
+                    newStudents = Manager.readFile(Manager.PATH_NAME, students);
                     newStudents.forEach(System.out::println);
                     break;
                 case 0:
