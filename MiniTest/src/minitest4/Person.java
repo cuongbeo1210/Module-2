@@ -4,7 +4,7 @@ public class Person {
     private int id;
     private String name;
     private int age;
-    private static int VALUE = 1;
+    public static int VALUE = 1;
 
     public Person(String name, int age) {
         this.id = VALUE++;

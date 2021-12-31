@@ -8,11 +8,11 @@ public class Manager {
     public static final String PATH_NAME = "src/minitest4/student.csv";
     public static void createStudent(Scanner scanner, ArrayList<Student> students) {
         if (students.size() > 0){
-            Person.setVALUE(students.get(students.size() - 1).getId() + 1);
+            Person.VALUE = (students.get(students.size() - 1).getId() + 1);
         }
         scanner.nextLine();
         System.out.print("Nhập tên : ");
-        String name = scanner.nextLine();
+        String name = scanner.nextLine()                                                                                                                                                      ;
         System.out.print("Nhập tuổi : ");
         int age = Integer.parseInt(scanner.nextLine());
         System.out.print("Nhập điểm toán : ");
